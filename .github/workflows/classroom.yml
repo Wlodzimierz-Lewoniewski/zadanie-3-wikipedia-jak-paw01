@@ -1,0 +1,104 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Test 1
+      id: test-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test 1
+        setup-command: pip install -r requirements.txt
+        command: python main.py
+        input: Miasta na prawach powiatu
+        expected-output: |-
+          Biała Podlaska (ujednoznacznienie) | Miasta w Polsce | Miasto na prawach powiatu | Herb Białej Podlaskiej | Flaga Białej Podlaskiej
+          //upload.wikimedia.org/wikipedia/commons/thumb/7/72/Disambig.svg/25px-Disambig.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Plac_wolnosci_magistrat_poczta.jpg/240px-Plac_wolnosci_magistrat_poczta.jpg | //upload.wikimedia.org/wikipedia/commons/thumb/3/31/POL_Bia%C5%82a_Podlaska_COA.svg/100px-POL_Bia%C5%82a_Podlaska_COA.svg.png
+          https://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/powierzchnia-i-ludnosc-w-przekroju-terytorialnym-w-2022-roku,7,19.html?pdf=1 | https://demografia.stat.gov.pl/bazademografia/ | https://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/powierzchnia-i-ludnosc-w-przekroju-terytorialnym-w-2013-r-,7,10.html
+          Biała Podlaska | Miasta magnackie I Rzeczypospolitej (województwo brzeskolitewskie) | Miasta na prawach powiatu
+          Białystok (ujednoznacznienie) | Miasta w Polsce | Miasto na prawach powiatu | Rynek Kościuszki w Białymstoku | Herb Białegostoku
+          //upload.wikimedia.org/wikipedia/commons/thumb/7/72/Disambig.svg/25px-Disambig.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Rynek_Ko%C5%9Bciuszki%2C_Bia%C5%82ystok_%282%29.jpg/240px-Rynek_Ko%C5%9Bciuszki%2C_Bia%C5%82ystok_%282%29.jpg | //upload.wikimedia.org/wikipedia/commons/thumb/1/19/POL_Bia%C5%82ystok_COA.svg/100px-POL_Bia%C5%82ystok_COA.svg.png
+          https://wrotapodlasia.pl/pl/region_i_gospodarka/wiadomosci/historia/rocznica-nadania-praw-miejskich-dla-miasta-bialystok--0102.html | http://hdl.handle.net/11320/759 | http://worldcat.org/issn/0860-4096
+          Białystok | Miasta lokowane przez Jana III Sobieskiego | Miasta na prawach powiatu
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Test 2
+      id: test-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test 2
+        setup-command: pip install -r requirements.txt
+        command: python main.py
+        input: Państwa członkowskie Unii Europejskiej
+        expected-output: |-
+          Albania | Austria | Białoruś | Belgia | Bośnia i Hercegowina
+          //upload.wikimedia.org/wikipedia/commons/thumb/0/04/European_Union_map.svg/400px-European_Union_map.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/22px-Flag_of_Austria.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/d/df/OOjs_UI_icon_check.svg/20px-OOjs_UI_icon_check.svg.png
+          http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;language=en&amp;pcode=tps00001&amp;tableSelection=1&amp;footnotes=yes&amp;labeling=labels&amp;plugin=1 | http://eunews.blogspot.com/2005/05/iceland-only-adopting-65-percent-of-eu.html
+          Państwa członkowskie Unii Europejskiej
+          Austria (ujednoznacznienie) | Flaga Austrii | Godło Austrii | Hymn państwowy | Hymn Austrii
+          //upload.wikimedia.org/wikipedia/commons/thumb/7/72/Disambig.svg/25px-Disambig.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/125px-Flag_of_Austria.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Austria_Bundesadler.svg/85px-Austria_Bundesadler.svg.png
+          https://www.krone.at/2573806 | https://www.statistik.at/web_en/statistics/PeopleSociety/population/population_stock_and_population_change/total_population_at_the_beginning_of_the_year_guarter/028625.html | https://www.imf.org/external/pubs/ft/weo/2018/01/weodata/weorept.aspx?pr.x=64&amp;pr.y=16&amp;sy=2016&amp;ey=2023&amp;scsm=1&amp;ssd=1&amp;sort=country&amp;ds=.&amp;br=1&amp;c=122&amp;s=NGDPD%2CPPPGDP%2CNGDPDPC%2CPPPPC%2CLP&amp;grp=0&amp;a=
+          Austria | Państwa w Europie | Państwa członkowskie Unii Europejskiej
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Test 3
+      id: test-3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test 3
+        setup-command: pip install -r requirements.txt
+        command: python main.py
+        input: Python
+        expected-output: |-
+          Python (zwierzęta) | Pyton | 1991 w informatyce | Paradygmat programowania | Programowanie wieloparadygmatowe
+          //upload.wikimedia.org/wikipedia/commons/thumb/7/72/Disambig.svg/25px-Disambig.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/150px-Python_logo_and_wordmark.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/28px-Wikibooks-logo.svg.png
+          https://docs.python.org/3/license.html | https://web.archive.org/web/20120623165941/http://cutter.rexx.com/~dkuhlman/python_book_01.html | http://cutter.rexx.com/~dkuhlman/python_book_01.html
+          Python | Języki skryptowe | Języki programowania maszyny wirtualnej Javy
+          Zintegrowane środowisko programistyczne | Python | WxPython | Debuger | Zope
+
+
+          Python | Generatory dokumentacji
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Test 4
+      id: test-4
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test 4
+        setup-command: pip install -r requirements.txt
+        command: python main.py
+        input: Biblioteki Pythona
+        expected-output: |-
+          Cykl życia programu | Język programowania | Python | Biblioteka programistyczna | Wykres
+          //upload.wikimedia.org/wikipedia/commons/thumb/8/84/Matplotlib_icon.svg/150px-Matplotlib_icon.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Mpl_screenshot_figures_and_code.png/240px-Mpl_screenshot_figures_and_code.png | //upload.wikimedia.org/wikipedia/commons/thumb/3/32/Rosenbrock_function.svg/290px-Rosenbrock_function.svg.png
+          https://matplotlib.org/users/license.html#copyright-policy
+          Biblioteki Pythona
+          Cykl życia programu | Język programowania | Python | C (język programowania) | Analiza numeryczna
+          //upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/150px-NumPy_logo_2020.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/0/01/Numpy_example.png/240px-Numpy_example.png | //upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/28px-Wikibooks-logo.svg.png
+          https://github.com/numpy/numpy | https://github.com/numpy/numpy/blob/main/LICENSE.txt | https://www.educba.com/what-is-numpy/
+          Biblioteki Pythona | Otwarte oprogramowanie
+        comparison-method: contains
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TEST-1_RESULTS: "${{steps.test-1.outputs.result}}"
+        TEST-2_RESULTS: "${{steps.test-2.outputs.result}}"
+        TEST-3_RESULTS: "${{steps.test-3.outputs.result}}"
+        TEST-4_RESULTS: "${{steps.test-4.outputs.result}}"
+      with:
+        runners: test-1,test-2,test-3,test-4
