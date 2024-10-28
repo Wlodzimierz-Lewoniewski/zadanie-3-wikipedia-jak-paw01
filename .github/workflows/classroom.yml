@@ -23,7 +23,7 @@ jobs:
         input: Miasta na prawach powiatu
         expected-output: |-
           Biała Podlaska (ujednoznacznienie) | Miasta w Polsce | Miasto na prawach powiatu | Herb Białej Podlaskiej | Flaga Białej Podlaskiej
-          //upload.wikimedia.org/wikipedia/commons/thumb/7/72/Disambig.svg/25px-Disambig.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Plac_wolnosci_magistrat_poczta.jpg/240px-Plac_wolnosci_magistrat_poczta.jpg | //upload.wikimedia.org/wikipedia/commons/thumb/3/31/POL_Bia%C5%82a_Podlaska_COA.svg/100px-POL_Bia%C5%82a_Podlaska_COA.svg.png
+          //upload.wikimedia.org/wikipedia/commons/thumb/7/72/Disambig.svg/25px-Disambig.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/3/38/Bia%C5%82a_Podlaska_-_Kola%C5%BC.jpg/240px-Bia%C5%82a_Podlaska_-_Kola%C5%BC.jpg | //upload.wikimedia.org/wikipedia/commons/thumb/3/31/POL_Bia%C5%82a_Podlaska_COA.svg/100px-POL_Bia%C5%82a_Podlaska_COA.svg.png
           https://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/powierzchnia-i-ludnosc-w-przekroju-terytorialnym-w-2022-roku,7,19.html?pdf=1 | https://demografia.stat.gov.pl/bazademografia/ | https://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/powierzchnia-i-ludnosc-w-przekroju-terytorialnym-w-2013-r-,7,10.html
           Biała Podlaska | Miasta magnackie I Rzeczypospolitej (województwo brzeskolitewskie) | Miasta na prawach powiatu
           Białystok (ujednoznacznienie) | Miasta w Polsce | Miasto na prawach powiatu | Rynek Kościuszki w Białymstoku | Herb Białegostoku
@@ -46,10 +46,10 @@ jobs:
           //upload.wikimedia.org/wikipedia/commons/thumb/0/04/European_Union_map.svg/400px-European_Union_map.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/22px-Flag_of_Austria.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/d/df/OOjs_UI_icon_check.svg/20px-OOjs_UI_icon_check.svg.png
           http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;language=en&amp;pcode=tps00001&amp;tableSelection=1&amp;footnotes=yes&amp;labeling=labels&amp;plugin=1 | http://eunews.blogspot.com/2005/05/iceland-only-adopting-65-percent-of-eu.html
           Państwa członkowskie Unii Europejskiej
-          Austria (ujednoznacznienie) | Flaga Austrii | Godło Austrii | Hymn państwowy | Hymn Austrii
-          //upload.wikimedia.org/wikipedia/commons/thumb/7/72/Disambig.svg/25px-Disambig.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/125px-Flag_of_Austria.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Austria_Bundesadler.svg/85px-Austria_Bundesadler.svg.png
-          https://www.krone.at/2573806 | https://www.statistik.at/web_en/statistics/PeopleSociety/population/population_stock_and_population_change/total_population_at_the_beginning_of_the_year_guarter/028625.html | https://www.imf.org/external/pubs/ft/weo/2018/01/weodata/weorept.aspx?pr.x=64&amp;pr.y=16&amp;sy=2016&amp;ey=2023&amp;scsm=1&amp;ssd=1&amp;sort=country&amp;ds=.&amp;br=1&amp;c=122&amp;s=NGDPD%2CPPPGDP%2CNGDPDPC%2CPPPPC%2CLP&amp;grp=0&amp;a=
-          Austria | Państwa w Europie | Państwa członkowskie Unii Europejskiej
+          Austria (ujednoznacznienie) | Godło Austrii | Flaga Austrii | Hymn państwowy | Hymn Austrii
+          //upload.wikimedia.org/wikipedia/commons/thumb/7/72/Disambig.svg/25px-Disambig.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Austria_Bundesadler.svg/100px-Austria_Bundesadler.svg.png | //upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/100px-Flag_of_Austria.svg.png
+          https://www.krone.at/2573806 | https://www.statistik.at/fileadmin/pages/405/Bev_Gebietseinheiten_seit_2002.ods | https://www.imf.org/external/pubs/ft/weo/2018/01/weodata/weorept.aspx?pr.x=64&amp;pr.y=16&amp;sy=2016&amp;ey=2023&amp;scsm=1&amp;ssd=1&amp;sort=country&amp;ds=.&amp;br=1&amp;c=122&amp;s=NGDPD%2CPPPGDP%2CNGDPDPC%2CPPPPC%2CLP&amp;grp=0&amp;a=
+          Austria | Państwa w Europie Środkowej | Państwa członkowskie Unii Europejskiej
         comparison-method: contains
         timeout: 10
         max-score: 1
