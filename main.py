@@ -63,7 +63,6 @@ def pobierz_url_obrazow(html):
     obrazy = [img for img in obrazy if re.search(r'\.(jpg|jpeg|png|gif)$', img['src'], re.IGNORECASE)
               and not any(pomijany in img['src'] for pomijany in obrazy_do_pominięcia)]
 
-    # Zbierz URL pierwszych trzech obrazów
     url_obrazow = [img['src'] for img in obrazy[:3]]
 
     return url_obrazow
@@ -88,8 +87,7 @@ def pobierz_liste_kategorii(html):
     kategorie = soup.select('.mw-normal-catlinks ul li a')[:3]
     return [kat.get_text() for kat in kategorie]
 
-
-# Główna część skryptu
+#skrypt
 nazwa_kategorii = input()
 html_kategorii = pobierz_html_kategorii(nazwa_kategorii)
 adresy_url, _ = ekstrakcja_adresow_i_nazw(html_kategorii)
